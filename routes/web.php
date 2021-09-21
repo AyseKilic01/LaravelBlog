@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.homepage');
-});
+Route::get('/', [\App\Http\Controllers\Front\homepage::class, 'index'])->name('homepage');
+Route::get('/kategori/{category}',[\App\Http\Controllers\Front\homepage::class, 'category'])->name('category');
+Route::get('/{category}/{slug}', [\App\Http\Controllers\Front\homepage::class, 'single'])->name('single');
+
