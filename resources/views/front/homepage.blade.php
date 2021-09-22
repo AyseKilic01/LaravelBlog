@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @section('title','Anasayfa')
 @section('content')
-    <div class="col-md-8 col-lg-8 col-xl-7">
+    <div class="col-md-9 mx-auto">
     @include('front.widgets.articleWidget')
     <!-- Divider-->
         <hr class="my-4"/>
