@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title',$category->name.' Kategorisi | '.count($articles). ' yazı bulundu.')
+@section('title',$category->name)
 @section('content')
     <div class="col-md-9 mx-auto">
         @include('front.widgets.articleWidget')

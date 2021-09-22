@@ -1,5 +1,6 @@
 
 <!-- Post preview-->
+@if(count($articles)>0)
 @foreach($articles as $article)
     <div class="post-preview">
         <a href="{{route('single',[$article->getCategory->slug,$article->slug])}}">
@@ -16,5 +17,13 @@
             <span class="float-end active" style="font-size:13px">{{$article->created_at->diffForHumans()}}</span>
         </p>
     </div>
+    @if(!$loop->last)
     <hr>
+    @endif
 @endforeach
+@else
+<div class="alert alert-danger">
+    <h6>Bu kategoriye ait yazı bulunamadı... </h6>
+
+</div>
+@endif

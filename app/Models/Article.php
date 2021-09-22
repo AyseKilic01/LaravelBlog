@@ -13,4 +13,5 @@ class Article extends Model
     {
         return $this->hasOne('App\Models\Category','id','category_id');
     }
+
 }

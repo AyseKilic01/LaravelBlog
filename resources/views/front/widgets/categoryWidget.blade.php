@@ -6,7 +6,8 @@
         </div>
         <div class="list-group" id="list-tab" role="tablist">
             @foreach($categories as $category)
-                <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list"
+                <a class="list-group-item list-group-item-action
+                @if(Request::segment(2)==$category->slug) active @endif" id="list-home-list" data-toggle="list"
                    href="{{route('category',$category->slug)}}" role="tab" aria-controls="home">
                     {{$category->name}}
                     <span class="badge bg-danger float-end text-white">
