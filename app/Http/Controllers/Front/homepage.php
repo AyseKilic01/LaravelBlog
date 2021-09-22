@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 //models
 use App\Models\Category;
 use App\Models\Article;
+use App\Models\Page;
 
 use Illuminate\Http\Request;
 
