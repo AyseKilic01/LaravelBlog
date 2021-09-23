@@ -16,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\Front\homepage::class, 'index'])->name('homepage');
 Route::get('/kategori/{category}',[\App\Http\Controllers\Front\homepage::class, 'category'])->name('category');
 Route::get('/{category}/{slug}', [\App\Http\Controllers\Front\homepage::class, 'single'])->name('single');
+Route::get('/iletisim', [\App\Http\Controllers\Front\homepage::class, 'contact'])->name('contact');
+Route::post('/iletisim', [\App\Http\Controllers\Front\homepage::class, 'contactpost'])->name('contact.post');
+Route::get('/{slug}', [\App\Http\Controllers\Front\homepage::class, 'page'])->name('page');
 
