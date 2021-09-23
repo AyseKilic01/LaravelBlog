@@ -4,6 +4,16 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
+Back Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/admin/panel', [\App\Http\Controllers\Back\dashboard::class, 'index'])->name('index');
+
+
+/*
+|--------------------------------------------------------------------------
  Front Routes
 |--------------------------------------------------------------------------
 |
@@ -20,11 +30,3 @@ Route::get('/iletisim', [\App\Http\Controllers\Front\homepage::class, 'contact']
 Route::post('/iletisim', [\App\Http\Controllers\Front\homepage::class, 'contactpost'])->name('contact.post');
 Route::get('/{slug}', [\App\Http\Controllers\Front\homepage::class, 'page'])->name('page');
 
-/*
-|--------------------------------------------------------------------------
-Back Routes
-|--------------------------------------------------------------------------
-|
-*/
-
-Route::get('/admin/panel', [\App\Http\Controllers\Front\homepage::class, 'page'])->name('page');
