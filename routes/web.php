@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+ Front Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -20,3 +20,11 @@ Route::get('/iletisim', [\App\Http\Controllers\Front\homepage::class, 'contact']
 Route::post('/iletisim', [\App\Http\Controllers\Front\homepage::class, 'contactpost'])->name('contact.post');
 Route::get('/{slug}', [\App\Http\Controllers\Front\homepage::class, 'page'])->name('page');
 
+/*
+|--------------------------------------------------------------------------
+Back Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/admin/panel', [\App\Http\Controllers\Front\homepage::class, 'page'])->name('page');

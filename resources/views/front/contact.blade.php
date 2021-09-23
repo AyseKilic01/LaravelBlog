@@ -30,7 +30,7 @@
             <div class="control-group">
                 <div class="form-group  controls">
                     <label>Email Adresi</label>
-                    <input type="email" class="form-control" value="{{old('email')}}" placeholder="Email Addresiniz" name="email" required >
+                    <input type="email" class="form-control" value="{{old('mail')}}" placeholder="Email Addresiniz" name="mail" required >
                 </div>
             </div>
             <div class="control-group">
@@ -58,8 +58,10 @@
     </div>
     <div class="col-md-4">
         <div class="card card-default">
-            <div class="card-body">Panel Content</div>
-            Adres : bla bla bla
+            <div class="card-body">İletişim Adresleri <br>
+              <br>
+            Adres : ----</div>
+
         </div>
 
     </div>
