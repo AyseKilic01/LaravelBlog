@@ -8,12 +8,15 @@ Back Routes
 |--------------------------------------------------------------------------
 |
 */
+Route::prefix('admin')->middleware('isLogin')->group(function (){
+Route::get('/login', [\App\Http\Controllers\Back\auth::class, 'login'])->name('login');
+Route::post('/login', [\App\Http\Controllers\Back\auth::class, 'loginPost'])->name('loginPost');
+});
+Route::prefix('admin')->middleware('isAdmin')->group(function (){
+Route::get('/logout', [\App\Http\Controllers\Back\auth::class, 'logout'])->name('logout');
+Route::get('/panel', [\App\Http\Controllers\Back\Dashboard::class, 'index'])->name('index');
 
-Route::get('/admin/login', [\App\Http\Controllers\Back\auth::class, 'login'])->name('login');
-Route::post('/admin/login', [\App\Http\Controllers\Back\auth::class, 'loginPost'])->name('loginPost');
-Route::get('/admin/panel', [\App\Http\Controllers\Back\dashboard::class, 'index'])->name('index');
-Route::get('/admin/logout', [\App\Http\Controllers\Back\auth::class, 'logOut'])->name('logOut');
-
+});
 
 
 /*

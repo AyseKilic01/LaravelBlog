@@ -20,7 +20,7 @@ class Auth extends Controller
     return redirect()->route('login')->withErrors('Oops yanlış olan bir şeyler var...');
     }
 
-    public function logOut(){
+    public function logout(){
         AuthL::logout();
         return redirect()->route('login');
     }
