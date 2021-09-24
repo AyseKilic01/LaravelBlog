@@ -17,7 +17,7 @@ class PageSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $pages = ['Hakkımda', 'İletişim'];
+        $pages = ['Hakkımda', 'Portfolyö'];
         $count = 0;
         foreach ($pages as $page) {
             $count++;
