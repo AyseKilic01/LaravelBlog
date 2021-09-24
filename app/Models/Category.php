@@ -9,6 +9,6 @@ class Category extends Model
 {
     use HasFactory;
     public function getCountArticle(){
-        return $this->hasMany('App\Models\Article','category_id','id')->count();
+        return $this->hasMany(Article::class,'category_id','id')->count();
     }
 }

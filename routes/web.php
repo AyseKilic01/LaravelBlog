@@ -12,6 +12,7 @@ Back Routes
 Route::get('/admin/login', [\App\Http\Controllers\Back\auth::class, 'login'])->name('login');
 Route::post('/admin/login', [\App\Http\Controllers\Back\auth::class, 'loginPost'])->name('loginPost');
 Route::get('/admin/panel', [\App\Http\Controllers\Back\dashboard::class, 'index'])->name('index');
+Route::get('/admin/logout', [\App\Http\Controllers\Back\auth::class, 'logOut'])->name('logOut');
 
 
 

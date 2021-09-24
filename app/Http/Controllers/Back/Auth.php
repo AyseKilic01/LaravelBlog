@@ -13,11 +13,15 @@ class Auth extends Controller
     {
         return view('back.auth.login');
     }
-
     public function  loginPost(Request $request){
     if(AuthL::attempt(['mail'=>$request->mail,'password'=>$request->password])){
-        return "basarili"; die();
+        return redirect()->route('index'); die();
     }
-    return "hata";
+    return redirect()->route('login')->withErrors('Oops yanlış olan bir şeyler var...');
+    }
+
+    public function logOut(){
+        AuthL::logout();
+        return redirect()->route('login');
     }
 }
