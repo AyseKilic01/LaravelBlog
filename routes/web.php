@@ -15,6 +15,12 @@ Route::post('/login', [\App\Http\Controllers\Back\auth::class, 'loginPost'])->na
 Route::prefix('admin')->middleware('isAdmin')->group(function (){
 Route::get('/logout', [\App\Http\Controllers\Back\auth::class, 'logout'])->name('logout');
 Route::get('/panel', [\App\Http\Controllers\Back\Dashboard::class, 'index'])->name('index');
+Route::get('makaleler/silinenler',[\App\Http\Controllers\Back\ArticleController::class, 'trashed'])->name('trashed.article');
+Route::resource('makaleler',\App\Http\Controllers\Back\ArticleController::class);
+Route::get('/switch','Back\ArticleController@switch')->name('switch');
+Route::get('/deletearticle/{id}','Back\ArticleController@delete')->name('delete.article');
+Route::get('/harddeletearticle/{id}','Back\ArticleController@hardDelete')->name('hard.delete.article');
+Route::get('/recoverarticle/{id}','Back\ArticleController@recover')->name('recover.article');
 
 });
 
